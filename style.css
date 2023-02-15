@@ -1,0 +1,129 @@
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Times New Roman', Times, serif, serif;
+}
+
+.up{
+    transform: rotate(180deg);
+    font-size: 10rem;
+    margin: 0;
+    
+}
+.down{
+    font-size: 10rem;
+    margin: 0;
+}
+.comma{
+    text-align: center;
+    color: yellow;
+    font-size: 160px;
+    margin: 0;
+}
+
+/* Page 1 */
+
+.page1head{
+  text-align: left;
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 50px;
+}
+
+.page1body1{
+  text-align: left;
+  color:white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:1.3rem;
+  margin-left: 100px;
+  margin-right:100px;
+
+}
+.comma2{
+  text-align: right;
+  color: yellow;
+  font-size: 10rem;
+  margin: 0;
+}
+
+/* .comma3{
+  text-align: center;
+  color: yellow;
+  font-size: 160px;
+  margin: 0;
+}
+.comma4{
+  text-align: center;
+  color: yellow;
+  font-size: 160px;
+  margin: 0;
+}
+.comma5{
+  text-align: center;
+  color: yellow;
+  font-size: 160px;
+  margin: 0;
+} */
+
+.page1body2{
+  text-align: left;
+  color:white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:1.3rem;
+  margin-left: 100px;
+  margin-right:100px;
+}
+
+.page1body3{
+  text-align: left;
+  color:white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:1.3rem;
+  margin-left: 100px;
+  margin-right:100px;
+}
+
+.page1body4{
+  text-align: left;
+  color:white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:1.3rem;
+  margin-left: 100px;
+  margin-right:100px;
+}
+
+.page1body5{
+  text-align: left;
+  color:white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:1.3rem;
+  margin-left: 100px;
+  margin-right:100px;
+}
+
+.page1body6{
+  text-align: left;
+  color:white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:1.3rem;
+  margin-left: 100px;
+  margin-right:100px;
+}
+.page1body7{
+  text-align: left;
+  color:white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:1.3rem;
+  margin-left: 100px;
+  margin-right:100px;
+}
+
+.page1body8{
+  text-align: left;
+  color:white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:1.3rem;
+  margin-left: 100px;
+  margin-right:100px;
+}
