@@ -216,83 +216,44 @@ body {
 
 /* page 2 */
 
-* {
-  box-sizing: border-box;
+body {
+  background:black;
+  padding-top: 14rem;
+  /* display: flex; */
+  justify-content: center;
+  
 }
 
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  color: white;
-  font-size: 2.4rem;
+.beforep pre {
+  color:white;
+  font-family: 'Times New Roman', Times, serif;
+  margin-right: 1%;
+  letter-spacing: .19em;
   text-align: center;
-
-}
-.head{
-  color:yellow
-}
-
-.englishp{
-  color:white;
-  text-align: left;
-  margin-left: 7%;
-  font-family: 'Times New Roman', Times, serif;
-  line-height: 9rem;
-  font-size: 4rem;
-}
-
-.exe{
-  color:white;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 2rem;
-}
-
-.koreanp{
-  color:white;
-  text-align: left;
- padding-left: 0;
-  font-family: 'Times New Roman', Times, serif;
-  line-height: 9rem;
-  font-size: 4rem;
-}
-
-.korean-text {
-  font-size: 2rem;
-}
-
-.english-text{
-  font-size: 2rem;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;s
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
+  line-height: 3rem;
+  font-size: 1.5rem;
 }
 
 .comma3{
-  text-align: right;
   color: yellow;
   font-size: 10rem;
-  margin: 0;
-  text-decoration: none;
-}
+  text-decoration: none;  
+  text-align: center;
+  margin-top: -5%;
+}  
 
 /* page 3 */
+
+
+body{
+  background-color: black;
+}
 
 h2{
   font-size: 20rem;
   font-family: 'Times New Roman', Times, serif;
   user-select: none;
+  color: white;
 }
 .motion {
   position: absolute;
@@ -303,6 +264,7 @@ h3{
   font-size: 20rem;
   font-family: 'Times New Roman', Times, serif;
   user-select: none;
+  color: white;
 }
 
 .designer {
@@ -314,6 +276,7 @@ h4{
   font-size: 20rem;
   font-family: 'Times New Roman', Times, serif;
   user-select: none;
+  color: white;
 }
 
 .ha{
@@ -325,9 +288,125 @@ h5{
   font-size: 20rem;
   font-family: 'Times New Roman', Times, serif;
   user-select: none;
+  color: white;
 }
 
 .haa{
   position: absolute;
   left: 1200px; 
 }
+
+h6{
+  font-size: 20rem;
+  font-family: 'Times New Roman', Times, serif;
+  user-select: none;
+  color: white;
+}
+
+.haaa{
+  position: absolute;
+  left: 1200px; 
+}
+
+h7{
+  font-size: 20rem;
+  font-family: 'Times New Roman', Times, serif;
+  user-select: none;
+  color: white;
+}
+
+.hi{
+  position: absolute;
+  left: 1200px; 
+}
+
+.comma4{
+  color: yellow;
+  font-size: 10rem;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  line-height: 0.1rem;
+}
+
+/* page p1.html */
+
+
+/* .p1head{
+  font-size: 7rem;
+  text-align: center;
+  color: yellow;
+  margin:0;
+  margin-top: -15%;
+}
+
+.p1head2{
+  font-size: 4rem;
+  text-align: center; 
+  color: white;
+  margin-top: -8%;
+} */
+
+.p3p{
+  text-align: center;
+  font-size: 2rem;
+  margin: 20%
+  width: 400px;
+  height: 100px;
+  animation: mymove 5s infinite;
+  color: yellow;
+}
+
+@keyframes mymove {
+  70% {font-size: 40px;}
+}
+
+.p1p{
+  text-align: left;
+  font-size: 1.5rem;
+  margin: 5%;
+}
+
+.p2p{
+  text-align: right;
+  font-size: 1.5rem;
+  margin: 5%;
+}
+
+.comma5{
+  color: yellow;
+  font-size: 10rem;
+  text-decoration: none;  
+  text-align: center;
+  margin-top: -5%;
+}  
+
+/* p2.html */
+
+body {
+  background:black;
+  padding-top: 14rem;
+  /* display: flex; */
+  justify-content: center;
+  
+}
+
+.q1 pre {
+  color:white;
+  font-family: 'Times New Roman', Times, serif;
+  white-space: ; 
+  /* margin: 0 auto;  */
+  margin-right: 8%;
+  letter-spacing: .19em;
+  text-align: center;
+  line-height: 3rem;
+  font-size: 1.5rem;
+}
+
+.comma6{
+  color: yellow;
+  font-size: 10rem;
+  text-decoration: none;  
+  text-align: center;
+  margin-top: -5%;
+}  

@@ -118,19 +118,25 @@ $(document).ready(function(){
   animateDivTwo();
   animateDivThree();
   animateDivFour();
+  animateDivFive();
+  animateDivSix();
 
   setInterval(function(){
       var $motion = $('.motion');
       var $designer = $('.designer');
       var $ha= $('.ha');
       var $haa= $('.haa');
-      var isOverlap = overlaps($motion[0], $designer[0], $ha[0], $haa[0]);
+      var $haaa=$('.haaa');
+      var $hi=$('.hi');
+      var isOverlap = overlaps($motion[0], $designer[0], $ha[0], $haa[0],$haaa[0],$hi[0]);
       if(isOverlap){
 
           $motion.stop(true);
           $designer.stop(true);
           $ha.stop(true);
           $haa.stop(true);
+          $haaa.stop(true);
+          $hi.stop(true);
           
           $motion.animate({ top: $motion.offset().top - 20, left: $motion.offset().left - 20 }, 100, function(){
             animateDiv();        
@@ -138,49 +144,32 @@ $(document).ready(function(){
           $designer.animate({ top: $designer.offset().top + 20, left: $designer.offset().left + 20 }, 100, function(){
             animateDivTwo();        
           });
-          $ha.animate({ top: $designer.offset().top + 20, left: $designer.offset().left + 20 }, 100, function(){
+          $ha.animate({ top: $ha.offset().top + 20, left: $ha.offset().left + 20 }, 100, function(){
             animateDivThree();
           });
-          $haa.animate({ top: $designer.offset().top + 20, left: $designer.offset().left + 20 }, 100, function(){
+          $haa.animate({ top: $haa.offset().top + 20, left: $haa.offset().left + 20 }, 100, function(){
             animateDivFour();
+          });
+          $haaa.animate({ top: $haaa.offset().top + 20, left: $haaa.offset().left + 20 }, 100, function(){
+            animateDivFour();
+          });
+          $hi.animate({ top: $hi.offset().top + 20, left: $hi.offset().left + 20 }, 100, function(){
+              animateDivFour();
       });
     }
   }, 100);
 
 });
 
-// $(document).ready(function(){
+// 위에 확인하기!!!!!!
 
-//   animateDiv();
-//   animateDivTwo();
-
-//   setInterval(function(){
-//       var $motion = $('.motion');
-//       var $designer = $('.designer');
-//       var isOverlap = overlaps($motion[0], $designer[0]);
-//       if(isOverlap){
-
-//           $motion.stop(true);
-//           $designer.stop(true);
-          
-//           $motion.animate({ top: $motion.offset().top - 20, left: $motion.offset().left - 20 }, 100, function(){
-//             animateDiv();        
-//           });
-
-//           $designer.animate({ top: $designer.offset().top + 20, left: $designer.offset().left + 20 }, 100, function(){
-//             animateDivTwo();        
-//           });
-//       }
-//   }, 100);
-
-// });
-
-
-function overlaps(a, b, c, d) {
+function overlaps(a, b, c, d, e, f) {
 const rect1 = a.getBoundingClientRect();
 const rect2 = b.getBoundingClientRect();
 const rect3 = c.getBoundingClientRect();
 const rect4 = d.getBoundingClientRect();
+const rect5 = e.getBoundingClientRect();
+const rect6 = f.getBoundingClientRect();
 const isInHoriztonalBounds =
   rect1.x < rect2.x + rect2.width && rect1.x + rect1.width > rect2.x;
 const isInVerticalBounds =
@@ -244,7 +233,29 @@ function animateDivFour(){
   var speed = calcSpeed([oldq.top, oldq.left], newq);
 
   $('.haa').animate({ top: newq[0], left: newq[1] }, speed, function(){
-    animateDivThree();        
+    animateDivF();        
+  });
+
+};
+
+function animateDivFive(){
+  var newq = makeNewPosition();
+  var oldq = $('.haaa').offset();
+  var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+  $('.haaa').animate({ top: newq[0], left: newq[1] }, speed, function(){
+    animateDivFive();        
+  });
+
+};
+
+function animateDivSix(){
+  var newq = makeNewPosition();
+  var oldq = $('.hi').offset();
+  var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+  $('.hi').animate({ top: newq[0], left: newq[1] }, speed, function(){
+    animateDivSix();        
   });
 
 };
@@ -261,3 +272,70 @@ function calcSpeed(prev, next) {
   var speed = Math.ceil(greatest/speedModifier);
 
   return speed; }
+
+  // P2.html
+
+  $(function() {
+    var doneCheck = 0;
+    var curZindex = 0;
+    $(".pic").draggable({
+      containment: "body",
+      scroll: false
+    }).on("mousedown", function() {
+      $(this).css("z-index", curZindex + 1).children().addClass("grabbed").mouseup(function() {
+        $(this).removeClass("grabbed");
+      });
+      curZindex++;
+    });
+  
+    shuffle();
+    dropSet();
+  
+    $(".puzzlify").on("click", function() {
+      if ($("input").val() != "")
+      puzzlify();
+    });
+  
+    function shuffle() {
+      for (var k = 1; k <= 5; k++)
+        for (var i = 1; i <= 5; i++) {
+          var posHolderLeft;
+          var posHolderTop;
+          var randIndex = Math.floor(Math.random() * 5) + 1;
+          var randIndex2 = Math.floor(Math.random() * 5) + 1;
+          posHolderTop = $(".pic-" + i + "-" + k).css("top");
+          posHolderLeft = $(".pic-" + i + "-" + k).css("left");
+          $(".pic-" + i + "-" + k).css("top", $(".pic-" + randIndex + "-" + randIndex2).css("top"));
+          $(".pic-" + randIndex + "-" + randIndex2).css("top", posHolderTop);
+          $(".pic-" + i + "-" + k).css("left", $(".pic-" + randIndex + "-" + randIndex2).css("left"));
+          $(".pic-" + randIndex + "-" + randIndex2).css("left", posHolderLeft);
+        }
+    }
+  
+    function dropSet() {
+      for (var i = 1; i <= 5; i++)
+        for (var k = 1; k <= 5; k++) {
+          $(".dz-" + i + "-" + k).droppable({
+            accept: ".pic-" + i + "-" + k,
+            drop: function(event, ui) {
+              doneCheck++;
+              $(ui.helper[0]).css("top", $(this).position().top);
+              $(ui.helper[0]).css("left", $(this).position().left);
+              $(ui.helper[0]).draggable("disable").css("z-index", "1");
+              if (doneCheck == 25) {
+                $(".pic").css("border", "none");
+                alert("Good job!");
+              }
+            }
+          })
+        }
+    }
+  
+    function puzzlify() {
+      var picAddr = "url(\"" + $('input').val() + "\")";
+      $("input").val("");
+      $(".inner-pic").css("background-image", picAddr);
+      $(".indz").css("background-image", picAddr);
+    }
+  
+  })
